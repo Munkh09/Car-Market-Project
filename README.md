@@ -90,9 +90,9 @@ The division of work among team members is as follows:
   
 - **Backend Development**: Abel, Jugraj, Jared, Munkh-Erdene
   
-- **Database Setup and Management**: Munkh-Erdene
+- **Database Design, Normalization, DDL, Management**: Munkh-Erdene
 
-- **Java Integration**: Munkh-Erdene
+- **Database Population and Java Integration**: Munkh-Erdene
 
 - **Documentation**: All team members
 
