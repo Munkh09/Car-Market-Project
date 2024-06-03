@@ -1,0 +1,141 @@
+<style>
+	.card-img-top {
+		width: 100%;
+		height: 200px;
+	}
+</style>
+
+<html>
+	<head>
+		<title>Your sales</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body style="background-color: lightslategray;">
+		<div class="container-fluid" style="background-color: lightslategray;">
+			<h1>Your sale history</h1>
+			<div class="row">
+				<!-- Search bar stuff here -->
+				<!--spacer col-->
+				<div class="col-lg-2"></div>
+				<div class="col">
+					<a href="{{ url_for('post') }}" class="btn btn-primary">All Posts</a>
+					<a href="{{ url_for('your_posts') }}" class="btn btn-primary">Your Posts</a>
+					<a href="{{ url_for('bookmarks') }}" class="btn btn-primary">Bookmarks</a>
+					<a href="{{ url_for('bought_cars') }}" class="btn btn-primary">Your Purchases</a>
+					<a href="{{ url_for('sales') }}" class="btn btn-success">Your Sales</a>
+					<a href="{{ url_for('owned_cars') }}" class="btn btn-primary">Your Car History</a> 
+					<a href="{{ url_for('profile') }}" class="btn btn-primary">Account</a>
+					<a href="{{ url_for('issue') }}" class="btn btn-primary">Issues</a>
+					<a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a> 
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!-- Search bar stuff here -->
+				<div class="col-lg-2"></div>
+				<div class="col">
+					<form action="{{ url_for('sales') }}" method="post">
+						<input type="search" name="soldSearch" id="" placeholder="Enter Plate Number">
+						<button type="submit" class="btn btn-primary">Search</button>
+					</form>
+				</div>
+				<div class="col">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!-- Search filter stuff here -->
+				<div class="col-lg-2 bg-warning text-white">
+					<br>
+					<form action="{{ url_for('sales') }}" method="post" style="text-align: center; margin: 20px;">
+						<!--<div class="input-group">
+							<label for="color" style="display: block; margin-bottom: 5px;">Color:</label>
+							<input type="text" id="color" name="color" placeholder="Color...">
+						</div>
+				
+						<div class="input-group">
+							<label for="min-miles" style="display: block; margin-bottom: 5px; margin-top: 10px;">Minimum Miles:</label>
+							<input type="text" id="min-miles" name="min-miles" placeholder="Min miles...">
+						</div>
+				
+						<div class="input-group">
+							<label for="max-miles" style="display: block; margin-bottom: 5px; margin-top: 10px;">Maximum Miles:</label>
+							<input type="text" id="max-miles" name="max-miles" placeholder="Max miles...">
+						</div>-->
+				
+						<div class="input-group">
+							<label for="min-price" style="display: block; margin-bottom: 5px; margin-top: 10px;">Minimum Price:</label>
+							<input type="text" id="min-price" name="min-price" placeholder="Min price...">
+						</div>
+				
+						<div class="input-group">
+							<label for="max-price" style="display: block; margin-bottom: 5px; margin-top: 10px;">Maximum Price:</label>
+							<input type="text" id="max-price" name="max-price" placeholder="Max price...">
+						</div>
+				
+						<!--<div class="input-group">
+							<label for="energy-type" style="display: block; margin-bottom: 5px; margin-top: 10px;">Energy Type:</label>
+							<select id="energy-type" name="energy-type">
+								<option value="gasoline">Gasoline</option>
+								<option value="diesel">Diesel</option>
+								<option value="electric">Electric</option>
+								<option value="hybrid">Hybrid</option>
+							</select>
+						</div>
+				
+						<div class="input-group">
+							<label for="condition" style="display: block; margin-bottom: 5px; margin-top: 10px;">Condition:</label>
+							<select id="condition" name="condition">
+								<option value="new">New</option>
+								<option value="great">Great</option>
+								<option value="good">Good</option>
+								<option value="well-worn">Well-worn</option>
+								<option value="undriveable">Undriveable</option>
+							</select>
+						</div>
+				
+						<div class="input-group">
+							<label for="zip" style="display: block; margin-bottom: 5px; margin-top: 10px;">Zip Code:</label>
+							<input type="text" id="zip" name="zip" placeholder="Zip Code...">
+						</div>
+				
+						<div class="input-group">
+							<label for="city" style="display: block; margin-bottom: 5px; margin-top: 10px;">City:</label>
+							<input type="text" id="city" name="city" placeholder="City...">
+						</div>
+				
+						<div class="input-group">
+							<label for="state" style="display: block; margin-bottom: 5px; margin-top: 10px;">State:</label>
+							<input type="text" id="state" name="state" placeholder="State...">
+						</div>-->
+				
+						<button type="submit" class="btn btn-primary" style="margin-top: 10px;">Filter Posts</button>
+					</form>
+				</div>
+
+				<!-- Post here -->
+				<div class="col bg-primary text-white" style="padding: 2%; margin: auto;">
+					{% for post in posts %}
+					<div class="row mx-auto mb-5" style="color: black;">
+
+						<div class="col-md-auto col-sm-auto my-auto mt-4">
+							<div class="card" style="width: 20rem;">
+								<!--<img src="../Car_Images/sienna9.jpg" alt="" class="card-img-top">-->
+								<div class="card-body">
+									<h4 style="font-weight: 550;">Plate Number: {{ post[1] }}</h4>
+									<a href=""><h6>Car sold to: {{ post[2] }}</h6></a>
+									<h6>Car sold on: {{ post[4] }}</h6>
+									<h6>Car sold for: ${{ post[3] }}</h6>
+								</div>
+							</div>
+						</div>
+						
+					</div>
+					{% endfor %}
+					<!--end of posts-->
+				</div>
+			</div>
+		</div>
+		<script src="post.js"></script>
+	</body>
+</html>

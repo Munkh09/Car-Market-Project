@@ -1,0 +1,104 @@
+<style>
+	.card-img-top {
+		width: 100%;
+		height: 200px;
+	}
+</style>
+
+<html>
+	<head>
+		<title>Your Posts</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	</head>
+	<body style="background-color: lightslategray;">
+		<div class="container-fluid" style="background-color: lightslategray;">
+			<h1>Viewing Your Car Listings</h1>
+			<div class="row">
+				<!--spacer col-->
+				<div class="col-lg-2"></div>
+				<div class="col">
+					<a href="{{ url_for('post') }}" class="btn btn-primary">All Posts</a>
+					<a href="{{ url_for('your_posts') }}" class="btn btn-success">Your Posts</a>
+					<a href="{{ url_for('bookmarks') }}" class="btn btn-primary">Bookmarks</a>
+					<a href="{{ url_for('bought_cars') }}" class="btn btn-primary">Your Purchases</a>
+					<a href="{{ url_for('sales') }}" class="btn btn-primary">Your Sales</a>
+					<a href="{{ url_for('owned_cars') }}" class="btn btn-primary">Your Car History</a> 
+					<a href="{{ url_for('profile') }}" class="btn btn-primary">Account</a>
+					<a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a> 
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!-- Search bar stuff here -->
+				<div class="col-lg-2"></div>
+				<div class="col">
+					<form action="{{ url_for('post') }}" method="post">
+						<input type="search" name="postSearch" id="" placeholder="Enter Car Name">
+						<button type="submit" class="btn btn-primary" value="postSearchBtn">Search</button>
+					</form>
+				</div>
+				<div class="col">
+				</div>
+			</div>
+			<br>
+			<div class="row">
+				<!-- Search filter stuff here -->
+				<div class="col-lg-2 bg-warning text-white">
+					<br>
+					<form action="{{ url_for('post') }}" method="post" style="text-align: center;">
+						<label>Color:	</label><input type="text"  name="yourPostColor" id=""><br>
+						<label>Year:	</label><input type="text"  name="yourPostYear" id=""><br>
+						<label for="">Miles</label><br>
+						<label>Miles Min:	</label><input type="number"  name="yourPostMinMiles" id=""><br>
+						<label>Miles Max:	</label><input type="number"  name="yourPostMaxMiles" id=""><br>
+						<label for="">Price</label><br>
+						<label>Price Min:	</label><input type="number" name="yourPostMinPrice" id=""><br>
+						<label>Price Max:	</label><input type="number"  name="yourPostMaxPrice" id=""><br>
+						<label for="">Energy Consumption Type</label><!--Gas, electric, hybrid-->
+						<select name="yourPostEnergyType" id="">
+							<option value="">All</option>
+							<option value="gas">Gas</option>
+							<option value="hybrid">Hybrid</option>
+							<option value="electric">Electric</option>
+						</select>
+						<br>
+						<label for="">Mpg</label><br>
+						<label>Mpg Min:	</label><input type="number" name="yourPostMinMpg" id=""><br>
+						<label>Mpg Max:	</label><input type="number"  name="yourPostMaxMpg" id=""><br>
+						<br>
+						<!--Location info-->
+						<label for="">City</label><input type="text" name="yourPostCity"><br>
+						<label></label>
+						<br>
+						<button type="submit" class="btn-primary">Filter Posts</button>
+					</form>
+				</div>
+
+		            <!-- Post display -->
+		            <div class="col bg-primary text-dark" style="padding: 2%;">
+		                <div class="row">
+		                    {% for post in posts %}
+		                    <div class="col-md-4 mb-4">
+		                        <div class="card">
+		                            <div class="card-body text-dark">
+		                                <h4 style="font-weight: 550;">{{ post[1] }}</h4>
+		                                <p><strong>Plate Number:</strong> {{ post[0] }}</p>
+		                                <p><strong>Model:</strong> {{ post[2] }}</p>
+										<p><strong>Color:</strong> {{ post[10] }}</p>
+		                                <p><strong>MPG:</strong> {{ post[3] }}</p>
+		                                <p><strong>Fuel:</strong> {{ post[4] }}</p>
+		                                <p><strong>Year:</strong> {{ post[5] }}</p>
+		                                <p><strong>Mileage:</strong> {{ post[6] }}</p>
+		                                <p><strong>City:</strong> {{ post[7] }}</p>
+		                                <p><strong>Price:</strong> {{ post[8] }}</p>
+		                                <p><strong>Post Date:</strong> {{ post[9] }}</p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    {% endfor %}
+					<!--end of post-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
