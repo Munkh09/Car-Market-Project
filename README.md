@@ -88,11 +88,11 @@ The division of work among team members is as follows:
 
 - **Frontend Development**: Jared, Brian
   
-- **Backend Development**: Abel, Jugraj, Jared
+- **Backend Development**: Abel, Jugraj, Jared, Munkh-Erdene
   
-- **Database Setup and Management**: Munkh
+- **Database Setup and Management**: Munkh-Erdene
 
-- **Java Integration**: Munkh
+- **Java Integration**: Munkh-Erdene
 
 - **Documentation**: All team members
 
