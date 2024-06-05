@@ -1,4 +1,12 @@
 # Car Website Project
+<img width="960" alt="p1" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/291892bb-5a55-4638-be71-e68118d965f7">
+<img width="960" alt="p2" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/bd4d19d3-2526-429f-9a08-6cae039a503a">
+<img width="960" alt="p3" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/1edf0eb6-570f-4e43-a83f-efdc1d5c99d2">
+<img width="960" alt="p4" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/577034de-51b0-44af-8841-a47b3deda471">
+<img width="960" alt="p5" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/5c0f8461-2122-40ef-b278-bcbdfcdeb100">
+<img width="960" alt="p6" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/ab592b67-f36a-4199-94e8-842cfccf1506">
+<img width="959" alt="p7" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/98004255-d9fa-4a65-8606-d7f0913dbf40">
+<img width="960" alt="p8" src="https://github.com/Munkh09/cs157a-car-market/assets/143208888/eed3aab3-79c3-45c0-9cc8-52a8923cc885">
 
 ## Team members: Abel Seno, Jared Soliven, Jugraj Pandher, Brian Blockmon, Munkh-Erdene Khuderbaatar
 
